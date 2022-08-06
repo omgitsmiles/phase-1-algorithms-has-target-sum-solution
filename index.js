@@ -1,13 +1,30 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  // create empty object
+  let iteratedNum = {}
+  // for loop
+  for (let i = 0; i < array.length; i++) {
+    // create a complement num 
+    let complement = target - array[i]
+    // if num in iteratedNum obj matches complement return true
+    if (iteratedNum[complement]) return true
+    // otherwise add the num into the obj
+    iteratedNum[array[i]] = true
+  }
+  return false
 }
 
 /* 
   Write the Big O time complexity of your function here
+  O(n^2)
 */
 
 /* 
   Add your pseudocode here
+  use linear big O notation to improve run time
+  declare an empty object
+  for loop
+  declare a variable where target - array[i]
+  if key value matches complement num return true
 */
 
 /*
